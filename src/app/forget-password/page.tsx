@@ -31,7 +31,7 @@ const sendOTPEmail = async ({ email, otp }: { email: string; otp: string }) => {
 
     const response = await emailjs.send(
       "service_0bc9q9a",
-      "template_au2y1fs",
+      "template_7qsg7kc",
       templateParams,
       "G7uOEI5bszdYQugOK"
     );
