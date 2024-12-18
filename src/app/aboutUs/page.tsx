@@ -13,13 +13,13 @@ const people = [
   //   image: "/naveen.jpg",
   //   linkedin: "https://www.linkedin.com/in/naveen-sharma-871b7a257",
   // },
-  {
-    id: 2,
-    name: "Megha Mandal",
-    designation: "AI Engineer | Full Stack Developer",
-    image: "/megha.jpg",
-    linkedin: "https://www.linkedin.com/in/megha-mandal-78556a286",
-  },
+  // {
+  //   id: 2,
+  //   name: "Megha Mandal",
+  //   designation: "AI Engineer | Full Stack Developer",
+  //   image: "/megha.jpg",
+  //   linkedin: "https://www.linkedin.com/in/megha-mandal-78556a286",
+  // },
   {
     id: 3,
     name: "Ekansh Juneja",
