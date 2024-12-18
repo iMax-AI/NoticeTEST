@@ -90,21 +90,21 @@ export default function Home() {
     try {
       // Uploading to Backend and processing to get required information
 
-      // const response = await axios.post(
-      //   "/api/uploadPdf-python",
-      //   formData,
-      //   {
-      //     headers: { "Content-Type": "multipart/form-data" },
-      //   }
-      // );
-
       const response = await axios.post(
-        "http://sastelaptop.com:3010/api/uploadGooglePdf",
+        "/api/uploadPdf-python",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
         }
       );
+
+      // const response = await axios.post(
+      //   "http://sastelaptop.com:3010/api/uploadGooglePdf",
+      //   formData,
+      //   {
+      //     headers: { "Content-Type": "multipart/form-data" },
+      //   }
+      // );
 
       // console.log("Done")
 
