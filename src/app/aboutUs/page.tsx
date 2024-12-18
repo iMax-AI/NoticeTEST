@@ -6,15 +6,22 @@ import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 
 // Add LinkedIn URLs for each person
 const people = [
+  // {
+  //   id: 1,
+  //   name: "Naveen Sharma",
+  //   designation: "AI Engineer | Full Stack Developer",
+  //   image: "/naveen.jpg",
+  //   linkedin: "https://www.linkedin.com/in/naveen-sharma-871b7a257",
+  // },
   {
-    id: 1,
+    id: 2,
     name: "Megha Mandal",
     designation: "AI Engineer | Full Stack Developer",
     image: "/megha.jpg",
     linkedin: "https://www.linkedin.com/in/megha-mandal-78556a286",
   },
   {
-    id: 2,
+    id: 3,
     name: "Ekansh Juneja",
     designation: "AI Engineer | Full Stack Developer",
     image: "/ekansh.jpg",
@@ -55,7 +62,7 @@ export default function AboutUs() {
             <p className="text-white mt-2">
               We believe in simplifying the complexities of the legal world.
               Our mission is to empower individuals and businesses by merging cutting-edge technology with
-              expert legal insights. Whether you're a seasoned legal professional or someone navigating legal challenges for the
+              expert legal insights. Whether you are a seasoned legal professional or someone navigating legal challenges for the
               first time, our platform is an initiative to provide tools, resources, and support needed to tackle legal matters with ease and confidence.
             </p>
             <p className="text-white mt-2">

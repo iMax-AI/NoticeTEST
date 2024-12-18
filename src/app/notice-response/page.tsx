@@ -187,10 +187,12 @@ export default function NoticeReply() {
 
   return (
     <>
-    <Navbar />
-    <div className="h-screen flex flex-col items-center p-6 bg-transparent">
+      <div className="fixed top-0 w-full z-50">
+        <Navbar />
+      </div>
+      <div className="h-screen flex flex-col items-center p-6 bg-transparent">
         <>
-          <div className="absolute top-8 right-4 flex gap-4 mt-16">
+          <div className="absolute top-8 right-4 flex gap-4 mt-24">
             <button
               className="cursor-pointer px-4 py-2 bg-[#222] text-white rounded-md font-medium hover:bg-[#333] transition-all duration-[300ms] inline-block"
               onClick={() => handleDownload("docx")}
@@ -207,7 +209,7 @@ export default function NoticeReply() {
 
           <div
             ref={textContainerRef}
-            className="mt-32 w-full h-[75%] max-w-4xl p-4 bg-gray-100 border border-gray-300 rounded overflow-y-auto "
+            className="mt-24 w-full h-[70%] max-w-4xl p-4 bg-gray-100 border border-gray-300 rounded overflow-y-auto "
           >
             {isEditing ? (
               <textarea

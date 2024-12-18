@@ -123,14 +123,16 @@ export default function SummonReasons() {
 
   return (
     <>
-      <Navbar />
+      <div className="fixed top-0 w-full z-50">
+        <Navbar />
+      </div>
       {loading ? (
         <LoadingSpinner />
       ) : (
         <div className="max-w-4xl mx-auto p-5 font-sans">
           {reasons.length > 0 ? (
             <>
-              <div className="flex justify-between items-center mb-5 flex-wrap mt-24">
+              <div className="flex justify-between items-center mb-5 flex-wrap mt-20">
                 {/* <div className="w-32">
                   <Image src="/logo.png" alt="Logo" width={100} height={100} className="w-full" />
                 </div> */}

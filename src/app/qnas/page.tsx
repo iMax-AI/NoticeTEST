@@ -188,17 +188,12 @@ export default function QuestionsPage() {
 
   return (
     <>
-    <Navbar />
-    <div className="max-w-6xl mx-auto px-4 py-6">
+      <div className="fixed top-0 w-full z-50">
+        <Navbar />
+      </div>
+    <div className="max-w-6xl mx-auto px-4 py-0">
       {!loading && (
-        <div className="flex flex-col items-center mb-8 mt-24">
-          {/* <Image 
-            src="/logo.png" 
-            alt="Logo" 
-            width={100} 
-            height={100} 
-            className="mt-4 mb-4"
-          /> */}
+        <div className="flex flex-col items-center mb-8 mt-20">
           <h3 className="text-xl font-bold text-center text-gray-800 px-4">
             Please Answer the Following Questions for Reply Generation
           </h3>

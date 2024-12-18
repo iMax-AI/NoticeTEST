@@ -24,7 +24,7 @@ const UserProfileIcon: React.FC<UserProfileIconProps> = ({ username = '', size =
   };
 
   return (
-    <div className={`relative inline-flex items-center justify-center overflow-hidden bg-gray-600 rounded-full ${sizeClasses[size]}`}>
+    <div className={`relative inline-flex items-center justify-center overflow-hidden bg-blue-700 rounded-full ${sizeClasses[size]}`}>
       <span className="font-medium text-white">{initials}</span>
     </div>
   );

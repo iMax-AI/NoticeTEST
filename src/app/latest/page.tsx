@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+import Navbar from "@/components/Navbar";
+
 
 // Dummy data for news items with bullet points
 const newsItems = [
@@ -73,6 +75,10 @@ export default function LatestNews() {
   }, [timelineRef]);
 
   return (
+    <>
+    <div className="fixed top-0 w-full z-50">
+      <Navbar />
+    </div>
     <div className="min-h-screen bg-gradient-to-br from-blue-600 via-indigo-500 to-purple-600 overflow-hidden">
       {/* Header Section */}
       <div className="w-full py-8 sticky top-0 bg-[#1e293b] z-10">
@@ -117,5 +123,6 @@ export default function LatestNews() {
         ))}
       </div>
     </div>
+  </>
   );
 }

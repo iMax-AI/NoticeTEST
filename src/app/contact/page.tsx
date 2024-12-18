@@ -29,10 +29,10 @@ const sendMessage = async (data: FormData): Promise<EmailJSResponse> => {
     };
 
     const response = await emailjs.send(
-      "service_gfpypir",
-      "template_117o0qj",
+      "service_0bc9q9a",
+      "template_au2y1fs",
       templateParams,
-      "TukdaH2sl4cOtqwja"
+      "G7uOEI5bszdYQugOK"
     );
 
     return response;
@@ -90,7 +90,7 @@ export default function ContactUs() {
       <div className="fixed top-0 w-full z-50">
         <Navbar />
       </div>
-      <div className="min-h-screen flex-1 flex flex-col bg-gradient-to-br from-blue-600 via-indigo-500 to-purple-600 overflow-y-auto pt-20">
+      <div className="min-h-screen flex-1 flex flex-col bg-gradient-to-br from-blue-600 via-indigo-500 to-purple-600 overflow-y-auto">
         <div className="w-full bg-[#1e293b] py-8">
           <div className="ml-8">
             <h2 className="text-white text-sm mb-1">Reach out to Us</h2>

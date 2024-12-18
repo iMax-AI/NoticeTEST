@@ -14,7 +14,7 @@ export default function GlobalMessage({ success, message, onReset }: { success: 
       }, 5000);
       return () => clearTimeout(timer);
     }
-  }, [success, message]);
+  }, [success, message, onReset]);
 
   if (!isVisible) return null;
 

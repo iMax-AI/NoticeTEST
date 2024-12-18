@@ -55,6 +55,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         token.last_logout = user.last_logout ? user.last_logout as Date : undefined
         token.pdf_upload_count = user.pdf_upload_count as number
         token.notice_generate_count = user.notice_generate_count as number
+        token.emailVerified = user.isEmailVerified ? new Date() : null
       }
       return token
     },
@@ -72,7 +73,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         last_logout: token.last_logout,
         pdf_upload_count: token.pdf_upload_count,
         notice_generate_count: token.notice_generate_count,
-        // emailVerified: null
+        emailVerified: token.isEmailVerified ? new Date() : null
+
       }
       return session
     }

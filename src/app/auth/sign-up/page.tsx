@@ -35,11 +35,11 @@ const sendVerificationMessage = async ({
 }) => {
   try {
     const templateParams = {
-      from_name: "Notice Reply",
+      from_name: "LEGALAID AI",
       to_name: fullname,
       to_email: email,
       subject: "Email Verification Code",
-      message: `Thank you for using Notice Reply. Please use the following OTP to complete your verification:
+      message: `Thank you for using LEGALAID AI. Please use the following OTP to complete your verification:
 
         Your OTP code is: ${otp}
 
@@ -53,10 +53,10 @@ const sendVerificationMessage = async ({
 
 
     const response = await emailjs.send(
-      "service_gfpypir",
-      "template_plvqxcg",
+      "service_0bc9q9a",
+      "template_au2y1fs",
       templateParams,
-      "TukdaH2sl4cOtqwja"
+      "G7uOEI5bszdYQugOK"
     );
     return response;
     
@@ -136,7 +136,7 @@ export default function SignUpForm() {
         <Navbar />
       </div>
       <div className="h-[100vh] bg-gradient-to-br from-blue-600 via-indigo-500 to-purple-600 overflow-y-auto">
-        <div className="min-h-[100vh] w-full flex items-start justify-center px-4 sm:px-6 md:px-8 lg:px-10 mt-8">
+        <div className="min-h-[100vh] w-full flex items-start justify-center px-4 sm:px-6 md:px-8 lg:px-10 mt-8 bg-[#4545ef]">
           {!isSuccess ? (
             <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-6 shadow-input bg-[#1e293b]">
               {globalMessage && (

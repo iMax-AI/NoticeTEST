@@ -55,7 +55,7 @@ export default function Home() {
           transition={{ duration: 1 }}>
           <h1 className="text-5xl font-bold text-white mb-4">LegalAID AI</h1>
           <p className="text-lg font-semibold text-indigo-200">
-            One stop solution for all your legal problems, whether it's generating 
+            One stop solution for all your legal problems, whether it is generating 
             replies to notices, general assistance, or knowledge gathering. 
             LegalAID AI has you covered.
           </p>

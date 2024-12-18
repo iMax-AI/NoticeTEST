@@ -179,13 +179,15 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
+      <div className="fixed top-0 w-full z-50">
+        <Navbar />
+      </div>
       {isContinue && (
         <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-90 z-50">
           <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-gray-700 border-solid"></div>
         </div>
       )}
-      <div className="flex flex-col items-center justify-center px-6 min-h-screen pt-12">
+      <div className="flex flex-col items-center justify-center px-6 min-h-screen pt-0">
         {globalMessage && (
           <GlobalMessage success={globalSuccess} message={globalMessage} onReset={() => setGlobalSuccess("none")} />
         )}

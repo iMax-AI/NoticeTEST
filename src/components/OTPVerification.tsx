@@ -7,8 +7,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { handelResendVerficationCode } from "@/app/actions/authActions";
-
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
@@ -34,15 +32,13 @@ interface VerifyOTPProps {
 
 import GlobalMessage from "@/components/GlobalMessage";
 
-import { redirect } from 'next/navigation';
-
 import emailjs from "emailjs-com";
 // emailjs.init(process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY ?? "");
 
 const sendOTPEmail = async ({ email, otp }: { email: string; otp: string }) => {
   try {
     const templateParams = {
-      from_name: "Notice Reply",
+      from_name: "LEGALAID AI",
       to_email: email,
       subject: "Password Reset OTP",
       message: `Your OTP code for password reset is: ${otp}
@@ -50,10 +46,10 @@ const sendOTPEmail = async ({ email, otp }: { email: string; otp: string }) => {
     };
 
     const response = await emailjs.send(
-      "service_gfpypir",
-      "template_plvqxcg",
+      "service_0bc9q9a",
+      "template_7qsg7kc",
       templateParams,
-      "TukdaH2sl4cOtqwja"
+      "G7uOEI5bszdYQugOK"
     );
     return response;
 
@@ -159,97 +155,146 @@ const VerifyOTP = ({ email }: VerifyOTPProps) => {
   };
 
   return (
-    <main className="relative min-h-screen flex flex-col justify-center font-inter">
-      <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-24">
-        {!verified ? (
-          <div className="flex justify-center">
-            <div className="max-w-md mx-auto border-dotted border-4 border-black text-center px-4 sm:px-8 py-10 rounded-xl shadow">
+    <div style={{ 
+      minHeight: "100vh", 
+      width: "100%", 
+      background: "linear-gradient(to bottom right, #2563eb, #4f46e5, #7c3aed)",
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      padding: "1rem" 
+    }}>
+      {!verified ? (
+        <div style={{ width: "100%", maxWidth: "400px", margin: "0 auto" }}>
+          <div style={{ 
+            backgroundColor: "#1e293b", 
+            borderRadius: "16px", 
+            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", 
+            padding: "2rem" 
+          }}>
             {globalMessage && (
-              <GlobalMessage success={globalSuccess} message={globalMessage} onReset={() => setGlobalSuccess("none")} />
+              <GlobalMessage 
+                success={globalSuccess} 
+                message={globalMessage} 
+                onReset={() => setGlobalSuccess("none")} 
+              />
             )}
-              <header className="mb-6">
-                <h1 className="text-2xl text-black font-bold mb-1">Re-Set Password: OTP</h1>
-                <p className="text-[15px] text-slate-700">
-                  Enter the 6-digit verification code sent to your Email.
-                </p>
-              </header>
-              
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
-                  <FormField
-                    control={form.control}
-                    name="pin"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <InputOTP
-                            value={field.value}
-                            onChange={(otp) => field.onChange(otp)}
-                            maxLength={6}
-                            pattern={REGEXP_ONLY_DIGITS.source}
-                          >
-                            <InputOTPGroup>
-                              {[0, 1, 2, 3, 4, 5].map((index) => (
-                                <InputOTPSlot
-                                  key={index}
-                                  index={index}
-                                  className={'text-black border-black text-center w-12 h-12 mx-1 rounded-lg border transition-all duration-200'}
-                                />
-                              ))}
-                            </InputOTPGroup>
-                          </InputOTP>
-                        </FormControl>
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <button
-                    className="cursor-pointer px-4 py-2 mt-6 bg-[#222] relative group/btn w-full text-white rounded-md h-10 font-medium hover:bg-[#333] shadow-lg transition-all duration-[300ms]"
-                    type="submit"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <svg aria-hidden="true" role="status" className="inline w-4 h-4 me-3 text-gray-200 animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M100..." fill="#1C64F2"/>
-                        </svg>
-                        Loading...
-                      </>
-                    ) : (
-                      <>
-                        Verify Code &rarr;
-                      </>
-                    )}
-                  </button>
-
-                  <div className="text-l text-slate-900 mt-4">
-                    Did not receive code?{' '}
+            <div style={{ 
+              textAlign: "center", 
+              marginBottom: "2rem" 
+            }}>
+              <h1 style={{ 
+                fontSize: "24px", 
+                fontWeight: "700", 
+                color: "white", 
+                marginBottom: "0.75rem" 
+              }}>
+                Reset Password: OTP Verification
+              </h1>
+              <p style={{ 
+                color: "#9ca3af", 
+                fontSize: "16px" 
+              }}>
+                Enter the 6-digit verification code sent to your email
+              </p>
+            </div>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} style={{ marginTop: "1.5rem" }}>
+                <FormField
+                  control={form.control}
+                  name="pin"
+                  render={({ field }) => (
+                    <FormItem style={{ display: "flex", justifyContent: "center" }}>
+                      <FormControl>
+                        <InputOTP
+                          value={field.value}
+                          onChange={(otp) => field.onChange(otp)}
+                          maxLength={6}
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            gap: "8px"
+                          }}
+                        >
+                          <InputOTPGroup style={{
+                            display: "flex",
+                            gap: "8px",
+                            justifyContent: "center"
+                          }}>
+                            {[0, 1, 2, 3, 4, 5].map((index) => (
+                              <InputOTPSlot
+                                key={index}
+                                index={index}
+                                style={{
+                                  width: "45px",
+                                  height: "45px",
+                                  backgroundColor: "#334155", // Updated to match email input background
+                                  border: "1px solid #374151",
+                                  borderRadius: "4px",
+                                  color: "white",
+                                  fontSize: "18px",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center"
+                                }}
+                              />
+                            ))}
+                          </InputOTPGroup>
+                        </InputOTP>
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+                <button
+                  type="submit"
+                  style={{
+                    width: "100%",
+                    backgroundColor: "#10b981",
+                    color: "white",
+                    borderRadius: "8px",
+                    padding: "12px",
+                    fontSize: "16px",
+                    fontWeight: "500",
+                    border: "none",
+                    cursor: "pointer",
+                    marginTop: "24px"
+                  }}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Verifying..." : "Verify Code →"}
+                </button>
+                <div style={{ 
+                  textAlign: "center", 
+                  marginTop: "16px" 
+                }}>
+                  <p style={{ color: "#9ca3af", fontSize: "14px" }}>
+                    Didn not receive code?{' '}
                     <button
                       onClick={handleResendClick}
                       disabled={!isResendEnabled}
-                      className={`font-bold text-base bg-clip-text ${isResendEnabled ? 'bg-gradient-to-r from-blue-500 to-violet-500' : 'text-gray-400'}`}
+                      style={{
+                        background: "none",
+                        border: "none",
+                        color: isResendEnabled ? "#10b981" : "#6b7280",
+                        fontWeight: "500",
+                        cursor: isResendEnabled ? "pointer" : "default",
+                        padding: "0",
+                        fontSize: "14px"
+                      }}
                     >
-                      Resend {countdown > 0 ? `in ${countdown}s` : ''}
+                      Resend {countdown > 0 ? `(${countdown}s)` : ''}
                     </button>
-                  </div>
-                </form>
-              </Form>
-            </div>
+                  </p>
+                </div>
+              </form>
+            </Form>
           </div>
-        ) : (
-          <ConfirmPassword email={email} />
-        )}
-      </div>
-    </main>
+        </div>
+      ) : (
+        <ConfirmPassword email={email} />
+      )}
+    </div>
   );
 };
 
 export default VerifyOTP;
-
-// const BottomGradient = () => {
-//   return (
-//     <>
-//       <span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-teal-500 to-transparent" />
-//       <span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-full mx-auto -bottom-px inset-x-px bg-gradient-to-r from-transparent via-teal-400 to-transparent" />
-//     </>
-//   );
-// };

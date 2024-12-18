@@ -54,16 +54,26 @@ export default function HistoryPage() {
 
   return (
     <>
-      <Navbar />
-
-      <div className="pt-20 bg-gray-100 min-h-screen">
-        <div className="w-full bg-black py-8">
+      <div className="fixed top-0 w-full z-50">
+        <Navbar />
+      </div>
+      {/* <div className="bg-gray-100 min-h-screen"> */}
+        {/* <div className="w-full bg-black py-8">
           <div className="ml-8">
             <h2 className="text-white text-sm mb-1">Your History</h2>
             <h1 className="font-bold text-3xl md:text-4xl text-white">
               Notice History
             </h1>
           </div>
+        </div> */}
+      <div className="min-h-screen bg-gradient-to-br from-blue-600 via-indigo-500 to-purple-600 overflow-hidden">
+        <div className="w-full bg-[#1e293b] py-8">
+        <div className="ml-8">
+          <h2 className="text-white text-sm mb-1">Your History</h2>
+          <h1 className="font-bold text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-violet-500">
+            Notice History
+          </h1>
+        </div>
         </div>
 
         <div className="min-h-[85vh] w-full flex items-start justify-center px-4 mt-4 mb-0">
