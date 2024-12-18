@@ -88,7 +88,7 @@ export default function Home() {
     setIsUploading(true);
 
     try {
-      // Uploading to Backend and processing to get required information
+      // Uploading to Backend and processing to get required information ok
 
       const response = await axios.post(
         "/api/uploadPdf-python",
