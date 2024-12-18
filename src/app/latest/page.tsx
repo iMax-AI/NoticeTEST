@@ -9,8 +9,20 @@ import Navbar from "@/components/Navbar";
 const newsItems = [
   {
     id: 1,
+    title: "High Court Cannot Seek Explanation From Judicial Officer For Judicial Action",
+    date: "17-December-2024",
+    image: "/news3.jpg", // Placeholder image
+    link: "https://www.livelaw.in/top-stories/high-court-cannot-seek-explanation-from-judicial-officer-for-judicial-action-supreme-court-278652",
+    points: [
+        "Higher courts can't seek explanations for judicial decisions, only administratively.",
+        "Mandating formats in bail orders interferes with trial court discretion.",
+        "Supreme Court expunged High Court's adverse remarks on the judge.",
+    ],
+  },
+  {
+    id: 2,
     title: "Supreme Court Directs Union to Form Action Plan for Childcare Spaces in Public Buildings",
-    date: "18-December-2024",
+    date: "19-November-2024",
     image: "/news1.jpg", // Placeholder image
     link: "https://www.livelaw.in/top-stories/supreme-court-directs-union-to-frame-action-plan-for-feeding-childcare-spaces-in-public-places-buildings-275689",
     points: [
@@ -20,21 +32,9 @@ const newsItems = [
     ],
   },
   {
-    id: 2,
-    title: "CCI Slaps Meta with Major Fine Over Data Sharing",
-    date: "17-December-2024",
-    image: "/news3.jpg", // Placeholder image
-    link: "https://lawtrend.in/cci-fines-meta-rs-213-crore-orders-whatsapp-to-halt-data-sharing-with-sister-companies/",
-    points: [
-        "CCI imposes a hefty Rs 213 crore fine on Meta Platforms Inc. for anti-competitive practices.",
-        "WhatsApp is ordered to stop data sharing with its sister companies.",
-        "CCI emphasizes user data privacy, tightening regulations on tech giants.",
-    ],
-  },
-  {
     id: 3,
     title: "Supreme Court Orders Continued Implementation of GRAP-IV Amid Delhi's Pollution Crisis",
-    date: "17-December-2024",
+    date: "18-November-2024",
     image: "/news2.jpg", // Placeholder image
     link: "https://www.freelaw.in/legalnews/Implementation-of-GRAP-IV-will-Continue-even-if-the-AQI-Level-Drops-Below-450-Supreme-Court-on-Increasing-Delhi-Air-Pollution-",
     points: [
